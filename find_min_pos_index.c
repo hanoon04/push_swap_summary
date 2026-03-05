@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_max_pos_index.c                                :+:      :+:    :+:  */
+/*   find_min_pos_index.c                                :+:      :+:    :+:  */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hal-tawa <hal-tawa@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/05 17:47:32 by hal-tawa          #+#    #+#             */
-/*   Updated: 2026/03/05 17:47:32 by hal-tawa         ###   ########.fr       */
+/*   Created: 2026/03/05 17:48:41 by hal-tawa          #+#    #+#             */
+/*   Updated: 2026/03/05 17:48:41 by hal-tawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
 
-int	find_max_pos_index(t_stack *stack)
+int	find_min_pos_index(t_stack *stack)
 {
 	t_node	*cur;
-	int		max;
+	int		min;
 	int		best;
 	int		i;
 
 	if (!stack || !stack->top)
 		return (-1);
 	cur = stack->top;
-	max = cur->index;
+	min = cur->value;
 	best = 0;
 	i = 0;
 	while (cur)
 	{
-		if (cur->index > max)
+		if (cur->value < min)
 		{
-			max = cur->index;
+			min = cur->value;
 			best = i;
 		}
 		cur = cur->next;

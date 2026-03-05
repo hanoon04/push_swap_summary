@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_min_pos.c                                :+:      :+:    :+:   */
+/*   rotate_b_to_top.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hal-tawa <hal-tawa@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/15 16:26:45 by hal-tawa          #+#    #+#             */
-/*   Updated: 2026/02/15 16:26:45 by hal-tawa         ###   ########.fr       */
+/*   Created: 2026/03/05 17:50:23 by hal-tawa          #+#    #+#             */
+/*   Updated: 2026/03/05 17:50:23 by hal-tawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "push_swap.h"
 
-int	find_min_pos(t_node *stack)
+void	rotate_b_to_top(t_ps *ps, int pos)
 {
-	int	min;
-	int	i;
-	int	pos;
+	int	size;
 
-	if (!stack)
-		return (-1);
-	min = stack -> value;
-	i = 0;
-	pos = 0;
-	while (stack)
+	if (!ps || !ps->b || pos < 0 || pos >= ps -> b -> size)
+		return ;
+	size = ps->b->size;
+	if (size <= 1)
+		return ;
+	if (pos <= size / 2)
+		while (pos-- > 0)
+			do_op(ps, OP_RB);
+	else
 	{
-		if (stack -> value < min)
-		{
-			min = stack -> value;
-			pos = i;
-		}
-		stack = stack -> next;
-		i ++;
+		pos = size - pos;
+		while (pos-- > 0)
+			do_op(ps, OP_RRB);
 	}
-	return (pos);
 }

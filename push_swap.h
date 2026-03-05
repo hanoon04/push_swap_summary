@@ -75,6 +75,11 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		is_sorted(t_node *stack);
 int		node_size(t_node *stack);
 int		get_max_bits(t_ps *ps);
+int		find_max_pos_index(t_stack *stack);
+int		find_min_pos_index(t_stack *stack);
+int		parse_flags(t_ps *ps, int argc, char **argv, int *start_i);
+int		is_all_spaces(const char *s);
+int		is_space(char c);
 
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
@@ -107,5 +112,11 @@ void	sort2(t_ps *ps);
 void	sort3(t_ps *ps);
 void	insertion_sort(t_ps *ps);
 void	radix_sort(t_ps *ps);
+void	error_exit(t_ps *ps);
+void	free_all(t_ps *ps);
+void	init_stack(t_ps *ps);
+void	parse_input(t_ps *ps, int argc, char **argv, int start_i);
+void	print_bench(t_ps *ps);
+void	rotate_b_to_top(t_ps *ps, int pos);
 
 #endif

@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_max_pos_index.c                                :+:      :+:    :+:  */
+/*   init_stack.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hal-tawa <hal-tawa@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/05 17:47:32 by hal-tawa          #+#    #+#             */
-/*   Updated: 2026/03/05 17:47:32 by hal-tawa         ###   ########.fr       */
+/*   Created: 2026/03/06 00:24:54 by hal-tawa          #+#    #+#             */
+/*   Updated: 2026/03/06 00:24:54 by hal-tawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
 
-int	find_max_pos_index(t_stack *stack)
+void	init_stack(t_ps *ps)
 {
-	t_node	*cur;
-	int		max;
-	int		best;
-	int		i;
+	int	i;
 
-	if (!stack || !stack->top)
-		return (-1);
-	cur = stack->top;
-	max = cur->index;
-	best = 0;
+	if (!ps)
+		return ;
+	ps -> a = malloc(sizeof(t_stack));
+	ps -> b = malloc(sizeof(t_stack));
+	if (!ps -> a || !ps -> b)
+		error_exit(ps);
+	ps -> a -> top = NULL;
+	ps -> a -> size = 0;
+	ps -> b -> top = NULL;
+	ps -> b -> size = 0;
+	ps -> strategy = STRAT_ADAPTIVE;
+	ps -> flag_bench = 0;
+	ps -> disorder = 0.0;
+	ps -> op_total = 0;
 	i = 0;
-	while (cur)
-	{
-		if (cur->index > max)
-		{
-			max = cur->index;
-			best = i;
-		}
-		cur = cur->next;
-		i++;
-	}
-	return (best);
+	while (i < 11)
+		ps -> op_count[i++] = 0;
 }

@@ -1,38 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_max_pos_index.c                                :+:      :+:    :+:  */
+/*   error_exit.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hal-tawa <hal-tawa@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/05 17:47:32 by hal-tawa          #+#    #+#             */
-/*   Updated: 2026/03/05 17:47:32 by hal-tawa         ###   ########.fr       */
+/*   Created: 2026/03/05 17:14:23 by hal-tawa          #+#    #+#             */
+/*   Updated: 2026/03/05 17:14:23 by hal-tawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
 
-int	find_max_pos_index(t_stack *stack)
+void	error_exit(t_ps *ps)
 {
-	t_node	*cur;
-	int		max;
-	int		best;
-	int		i;
-
-	if (!stack || !stack->top)
-		return (-1);
-	cur = stack->top;
-	max = cur->index;
-	best = 0;
-	i = 0;
-	while (cur)
-	{
-		if (cur->index > max)
-		{
-			max = cur->index;
-			best = i;
-		}
-		cur = cur->next;
-		i++;
-	}
-	return (best);
+	write(2, "Error\n", 6);
+	free_all(ps);
+	exit(1);
 }

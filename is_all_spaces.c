@@ -1,38 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_max_pos_index.c                                :+:      :+:    :+:  */
+/*   is_all_spaces.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hal-tawa <hal-tawa@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/05 17:47:32 by hal-tawa          #+#    #+#             */
-/*   Updated: 2026/03/05 17:47:32 by hal-tawa         ###   ########.fr       */
+/*   Created: 2026/03/05 17:37:34 by hal-tawa          #+#    #+#             */
+/*   Updated: 2026/03/05 17:37:34 by hal-tawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
 
-int	find_max_pos_index(t_stack *stack)
+int	is_all_spaces(const char *s)
 {
-	t_node	*cur;
-	int		max;
-	int		best;
-	int		i;
+	int	i;
 
-	if (!stack || !stack->top)
-		return (-1);
-	cur = stack->top;
-	max = cur->index;
-	best = 0;
+	if (!s)
+		return (1);
 	i = 0;
-	while (cur)
+	while (s[i])
 	{
-		if (cur->index > max)
-		{
-			max = cur->index;
-			best = i;
-		}
-		cur = cur->next;
+		if (!is_space(s[i]))
+			return (0);
 		i++;
 	}
-	return (best);
+	return (1);
 }
