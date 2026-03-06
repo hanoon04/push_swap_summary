@@ -1,43 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                :+:      :+:    :+:   */
+/*   ft_atol.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hal-tawa <hal-tawa@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/15 16:20:33 by hal-tawa          #+#    #+#             */
-/*   Updated: 2026/02/15 16:20:33 by hal-tawa         ###   ########.fr       */
+/*   Created: 2026/03/06 01:07:49 by hal-tawa          #+#    #+#             */
+/*   Updated: 2026/03/06 01:07:49 by hal-tawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "push_swap.h"
 
-void	rotate(t_stack *s)
+long	ft_atol(const char *str)
 {
-	t_node	*last;
-	t_node	*first;
+	long	res;
+	int		sign;
 
-	if (!s || s -> size < 2)
-		return ;
-	first = s -> top;
-	last = node_last(s -> top);
-	s -> top = s -> top -> next;
-	last -> next = first;
-	first -> next = NULL;
-}
-
-void	rotate_printer(t_stack *s, char c)
-{
-	rotate(s);
-	if (c == 'a')
-		write(1, "ra\n", 3);
-	else if (c == 'b')
-		write(1, "rb\n", 3);
-}
-
-void	rr(t_stack *a, t_stack *b)
-{
-	rotate(a);
-	rotate(b);
-	write(1, "rr\n", 3);
+	res = 0;
+	sign = 1;
+	while (*str == ' ' || (*str >= 9 && *str <= 13))
+		str++;
+	if (*str == '-' || *str == '+')
+	{
+		if (*str == '-')
+			sign = -1;
+		str++;
+	}
+	while (*str >= '0' && *str <= '9')
+	{
+		res = res * 10 + (*str - '0');
+		str++;
+	}
+	return (res * sign);
 }

@@ -40,14 +40,12 @@ void	radix_sort(t_ps *ps)
 	int	max_bits;
 	int	i;
 	int	j;
-	int	size;
 
-	max_bits = get_max_bits(ps -> a);
+	max_bits = get_max_bits(ps);
 	i = 0;
 	while (i < max_bits)
 	{
 		j = 0;
-		size = ps -> a -> size;
 		while (j < ps -> a -> size)
 		{
 			if (((ps -> a -> top -> index >> i) & 1) == 0)

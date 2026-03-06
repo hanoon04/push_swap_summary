@@ -36,6 +36,8 @@ SRCS = \
        simple_sort.c \
        small_sort.c \
        swap.c \
+       ft_atol.c \
+
 
 OBJS = $(SRCS:.c=.o)
 

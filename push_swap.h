@@ -68,8 +68,6 @@ typedef struct s_ps
 	long		op_count[11];
 }	t_ps;
 
-int		find_max_pos_index(t_node *stack);
-int		find_min_pos(t_node *stack);
 int		ft_isdigit(int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		is_sorted(t_node *stack);
@@ -80,6 +78,7 @@ int		find_min_pos_index(t_stack *stack);
 int		parse_flags(t_ps *ps, int argc, char **argv, int *start_i);
 int		is_all_spaces(const char *s);
 int		is_space(char c);
+long	ft_atol(const char *str);
 
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);

@@ -52,7 +52,7 @@ static char	*get_word(char const *s, char c)
 	return (word);
 }
 
-static void	free_all(char **arr, int j)
+static void	free_all_split(char **arr, int j)
 {
 	while (j > 0)
 		free(arr[--j]);
@@ -74,7 +74,7 @@ static int	stor_in_array(char const *s, char c, char **arr)
 			word = get_word(s + i, c);
 			if (!word)
 			{
-				free_all(arr, j);
+				free_all_split(arr, j);
 				return (0);
 			}
 			arr[j++] = word;

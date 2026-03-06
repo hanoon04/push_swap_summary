@@ -9,7 +9,7 @@
 /*   Updated: 2025/12/08 14:55:47 by hal-tawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "psuh_swap.h"
+#include "push_swap.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

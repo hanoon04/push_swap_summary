@@ -20,9 +20,9 @@ void	sort3(t_ps *ps)
 
 	if (is_sorted(ps -> a -> top))
 		return ;
-	first = ps -> a -> index;
-	second = ps -> a -> next -> index;
-	third = ps -> a -> next -> next -> index;
+	first = ps -> a -> top -> index;
+	second = ps -> a -> top -> next -> index;
+	third = ps -> a -> top -> next -> next -> index;
 	if (first == 0 && second == 2 && third == 1)
 	{
 		do_op(ps, OP_RRA);

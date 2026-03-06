@@ -48,7 +48,7 @@ int	node_size(t_node *stack)
 
 void	node_add_back(t_node **stack, t_node *new_node)
 {
-	t_node	last;
+	t_node	*last;
 
 	if (!stack || !new_node)
 		return ;
