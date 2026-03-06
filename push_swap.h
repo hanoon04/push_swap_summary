@@ -128,5 +128,6 @@ void	parse_input(t_ps *ps, int argc, char **argv, int start_i);
 void	print_bench(t_ps *ps);
 void	rotate_b_to_top(t_ps *ps, int pos);
 void	medium_sort(t_ps *ps);
+void	adaptive(t_ps *ps);
 
 #endif
