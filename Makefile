@@ -37,6 +37,8 @@ SRCS = \
        small_sort.c \
        swap.c \
        ft_atol.c \
+       disorder.c \
+       medium_chunk.c 
 
 
 OBJS = $(SRCS:.c=.o)

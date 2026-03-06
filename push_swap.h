@@ -40,6 +40,15 @@ typedef enum e_strategy
 	STRAT_COMPLEX
 }	t_strategy;
 
+typedef struct s_chunk
+{
+	int	n;
+	int	chunk_count;
+	int	chunk_size;
+	int	limit;
+	int	pushed;
+}	t_chunk;
+
 typedef enum e_op
 {
 	OP_SA,
@@ -79,6 +88,7 @@ int		parse_flags(t_ps *ps, int argc, char **argv, int *start_i);
 int		is_all_spaces(const char *s);
 int		is_space(char c);
 long	ft_atol(const char *str);
+double	calc_disorder(t_ps *ps);
 
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
@@ -117,5 +127,6 @@ void	init_stack(t_ps *ps);
 void	parse_input(t_ps *ps, int argc, char **argv, int start_i);
 void	print_bench(t_ps *ps);
 void	rotate_b_to_top(t_ps *ps, int pos);
+void	medium_sort(t_ps *ps);
 
 #endif
