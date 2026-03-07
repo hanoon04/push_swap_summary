@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hal-tawa <hal-tawa@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/06 00:24:54 by hal-tawa          #+#    #+#             */
-/*   Updated: 2026/03/06 00:24:54 by hal-tawa         ###   ########.fr       */
+/*   Created: 2026/03/08 00:06:04 by hal-tawa          #+#    #+#             */
+/*   Updated: 2026/03/08 00:06:04 by hal-tawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -28,6 +28,7 @@ void	init_stack(t_ps *ps)
 	ps -> strategy = STRAT_ADAPTIVE;
 	ps -> flag_bench = 0;
 	ps -> disorder = 0.0;
+	ps -> used_strategy = USED_NONE;
 	ps -> op_total = 0;
 	i = 0;
 	while (i < 11)

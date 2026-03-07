@@ -39,7 +39,10 @@ SRCS = \
        ft_atol.c \
        disorder.c \
        medium_chunk.c \
-       adaptive.c
+       adaptive.c \
+       print_utils.c \
+       strategy.c \
+       main.c \
 
 
 OBJS = $(SRCS:.c=.o)

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hal-tawa <hal-tawa@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/06 16:10:18 by hal-tawa          #+#    #+#             */
-/*   Updated: 2026/03/06 16:10:18 by hal-tawa         ###   ########.fr       */
+/*   Created: 2026/03/08 00:07:22 by hal-tawa          #+#    #+#             */
+/*   Updated: 2026/03/08 00:07:22 by hal-tawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -46,7 +46,7 @@ static void	run_chunks(t_ps *ps, t_chunk *c)
 			do_op(ps, OP_PB);
 			c -> pushed++;
 			if (ps -> b -> top
-				&& ps -> b -> top -> index < c -> limit - (c -> chunk_size / 2))
+				&& ps -> b -> top->index < c -> limit - (c -> chunk_size / 2))
 				do_op(ps, OP_RB);
 			if (c -> pushed > c -> limit)
 				c -> limit += c -> chunk_size;

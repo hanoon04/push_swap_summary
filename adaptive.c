@@ -12,6 +12,27 @@
 
 #include "push_swap.h"
 
+static void	choose_strategy(t_ps *ps, double dis)
+{
+	if (!ps)
+		return ;
+	if (dis < 0.2)
+	{
+		ps -> used_strategy = USED_SIMPLE;
+		insertion_sort(ps);
+	}
+	else if (dis < 0.5)
+	{
+		ps -> used_strategy = USED_MEDIUM;
+		medium_sort(ps);
+	}
+	else
+	{
+		ps -> used_strategy = USED_COMPLEX;
+		radix_sort(ps);
+	}
+}
+
 void	adaptive(t_ps *ps)
 {
 	double	dis;
@@ -21,13 +42,15 @@ void	adaptive(t_ps *ps)
 	dis = calc_disorder(ps);
 	ps -> disorder = dis;
 	if (ps -> a -> size == 2)
+	{
+		ps -> used_strategy = USED_SMALL;
 		sort2(ps);
+	}
 	else if (ps -> a -> size == 3)
+	{
+		ps -> used_strategy = USED_SMALL;
 		sort3(ps);
-	else if (dis < 0.2)
-		insertion_sort(ps);
-	else if (dis < 0.5)
-		medium_sort(ps);
+	}
 	else
-		radix_sort(ps);
+		choose_strategy(ps, dis);
 }

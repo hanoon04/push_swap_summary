@@ -40,6 +40,15 @@ typedef enum e_strategy
 	STRAT_COMPLEX
 }	t_strategy;
 
+typedef enum e_used_strategy
+{
+	USED_NONE,
+	USED_SMALL,
+	USED_SIMPLE,
+	USED_MEDIUM,
+	USED_COMPLEX
+}	t_used_strategy;
+
 typedef struct s_chunk
 {
 	int	n;
@@ -68,13 +77,13 @@ typedef struct s_ps
 {
 	t_stack		*a;
 	t_stack		*b;
-
 	t_strategy	strategy;
 	int			flag_bench;
 	double		disorder;
-
 	long		op_total;
 	long		op_count[11];
+	t_used_strategy		used_strategy;
+
 }	t_ps;
 
 int		ft_isdigit(int c);
@@ -129,5 +138,10 @@ void	print_bench(t_ps *ps);
 void	rotate_b_to_top(t_ps *ps, int pos);
 void	medium_sort(t_ps *ps);
 void	adaptive(t_ps *ps);
-
+void	putstr_fd(const char *s, int fd);
+void	putnbr_fd(long n, int fd);
+void	put2_fd(int n, int fd);
+void	put_percent_fd(double x, int fd);
+const char	*get_complexity(t_ps *ps);
+void	run_strategy(t_ps *ps);
 #endif
