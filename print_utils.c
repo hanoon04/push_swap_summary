@@ -65,11 +65,11 @@ void	put_percent_fd(double x, int fd)
 const char	*get_complexity(t_ps *ps)
 {
 	if (ps -> strategy == STRAT_ADAPTIVE)
-		return ("O(n√n)");
+		return ("O(n*sqrt(n))");
 	if (ps -> used_strategy == USED_SMALL)
 		return ("O(1)");
 	if (ps -> used_strategy == USED_SIMPLE)
-		return ("O(n*sqrt(n))");
+		return ("O(n^2)");
 	if (ps -> used_strategy == USED_MEDIUM)
 		return ("O(n*sqrt(n))");
 	if (ps -> used_strategy == USED_COMPLEX)
