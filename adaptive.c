@@ -19,6 +19,7 @@ void	adaptive(t_ps *ps)
 	if (is_sorted(ps -> a -> top))
 		return ;
 	dis = calc_disorder(ps);
+	ps -> disorder = dis;
 	if (ps -> a -> size == 2)
 		sort2(ps);
 	else if (ps -> a -> size == 3)
