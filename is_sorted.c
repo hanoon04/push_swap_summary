@@ -18,7 +18,7 @@ int	is_sorted(t_node *stack)
 		return (0);
 	while (stack -> next)
 	{
-		if (stack -> value < stack -> next -> value)
+		if (stack -> value > stack -> next -> value)
 			return (0);
 		stack = stack -> next;
 	}
