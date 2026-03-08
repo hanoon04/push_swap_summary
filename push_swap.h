@@ -142,6 +142,7 @@ void	putstr_fd(const char *s, int fd);
 void	putnbr_fd(long n, int fd);
 void	put2_fd(int n, int fd);
 void	put_percent_fd(double x, int fd);
-const char	*get_complexity(t_ps *ps);
+const char			*get_complexity(t_ps *ps);
 void	run_strategy(t_ps *ps);
+
 #endif
