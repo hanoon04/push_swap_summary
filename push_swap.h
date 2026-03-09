@@ -144,5 +144,6 @@ void	put2_fd(int n, int fd);
 void	put_percent_fd(double x, int fd);
 const char			*get_complexity(t_ps *ps);
 void	run_strategy(t_ps *ps);
+void	free_split(char **arr);
 
 #endif

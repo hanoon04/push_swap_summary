@@ -42,7 +42,8 @@ SRCS = \
        adaptive.c \
        print_utils.c \
        strategy.c \
-       main.c \
+       free_split.c \
+       main.c 
 
 
 OBJS = $(SRCS:.c=.o)
